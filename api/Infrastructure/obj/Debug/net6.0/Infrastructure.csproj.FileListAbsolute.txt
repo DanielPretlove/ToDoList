@@ -13,3 +13,5 @@ D:\Programming_Tasks\Full-Stack Projects\ToDoList\api\Infrastructure\obj\Debug\n
 D:\Programming_Tasks\Full-Stack Projects\ToDoList\api\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
 D:\Programming_Tasks\Full-Stack Projects\ToDoList\api\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 D:\Programming_Tasks\Full-Stack Projects\ToDoList\api\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
+D:\Programming_Tasks\Full-Stack Projects\ToDoList\api\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
+D:\Programming_Tasks\Full-Stack Projects\ToDoList\api\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache
