@@ -54,10 +54,24 @@ namespace API.Controllers
             return Ok();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:Guid}")]
         public async Task<ActionResult<ToDoList>> CreateNewToDoList(Guid Id)
         {
-            return await _repository.DeleteToDoList(Id);
+            try
+            {
+                var result = await _repository.GetToDoListById(Id);
+
+                if(result == null)
+                {
+                    return NotFound($"ToDoList with Id = {Id} not found");
+                }
+
+                return await _repository.DeleteToDoList(Id);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
         }
     }
 }

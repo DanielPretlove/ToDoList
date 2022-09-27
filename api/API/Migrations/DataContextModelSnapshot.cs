@@ -25,6 +25,7 @@ namespace API.Migrations
             modelBuilder.Entity("Domain.Entities.ToDoList", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Completed")

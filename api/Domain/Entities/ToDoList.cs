@@ -9,7 +9,8 @@ namespace Domain.Entities
 {
     public class ToDoList
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public Guid Id { get; set; }
         public int Completed { get; set; }
         [Required]

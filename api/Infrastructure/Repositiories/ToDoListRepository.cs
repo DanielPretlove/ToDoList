@@ -21,7 +21,7 @@ namespace Infrastructure.Repositiories
         }
         public async Task<ToDoList> GetToDoListById(Guid Id)
         {
-            return await _context.ToDoLists.Where(x => x.Id == Id).FirstOrDefaultAsync();
+            return await _context.ToDoLists.FirstOrDefaultAsync(x => x.Id == Id);
         }
         public async Task<ToDoList> CreateNewToDoList(ToDoList toDoList)
         {
@@ -36,15 +36,14 @@ namespace Infrastructure.Repositiories
         }
         public async Task<ToDoList> DeleteToDoList(Guid Id)
         {
-            var result = await _context.ToDoLists.Where(x => x.Id == Id).FirstOrDefaultAsync();
-
-            if(result != null) 
+            var result = await _context.ToDoLists.FirstOrDefaultAsync(x => x.Id == Id);
+            Console.WriteLine(result);
+            if(result != null)
             {
                 _context.ToDoLists.Remove(result);
                 await _context.SaveChangesAsync();
                 return result;
             }
-
             return null;
         }
     }
