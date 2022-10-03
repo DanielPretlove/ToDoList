@@ -15,13 +15,14 @@ namespace Infrastructure.Repositiories
         {
             _context = context;
         }
+
         public async Task<IEnumerable<ToDoList>> GetAllDoLists()
         {
             return await _context.ToDoLists.ToListAsync();
         }
         public async Task<ToDoList> GetToDoListById(Guid Id)
         {
-            return await _context.ToDoLists.FirstOrDefaultAsync(x => x.Id == Id);
+            return await _context.ToDoLists.FindAsync(Id);
         }
         public async Task<ToDoList> CreateNewToDoList(ToDoList toDoList)
         {
@@ -37,7 +38,6 @@ namespace Infrastructure.Repositiories
         public async Task<ToDoList> DeleteToDoList(Guid Id)
         {
             var result = await _context.ToDoLists.FirstOrDefaultAsync(x => x.Id == Id);
-            Console.WriteLine(result);
             if(result != null)
             {
                 _context.ToDoLists.Remove(result);

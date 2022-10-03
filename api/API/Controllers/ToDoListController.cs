@@ -26,19 +26,12 @@ namespace API.Controllers
         [HttpGet("{id:Guid}")]
         public async Task<ActionResult<ToDoList>> GetToDoListById(Guid Id) 
         {
-            try 
+            var result = await _repository.GetToDoListById(Id);
+            if(result == null)
             {
-                var result = await _repository.GetToDoListById(Id);
-                if(result == null)
-                {
-                    return NotFound();
-                }
-                return result;
+                return NotFound();
             }
-            catch(Exception ex)
-            {
-                return StatusCode(StatusCodes.Status404NotFound, ex.Message);
-            }
+            return result;
         }
 
         [HttpPost]
