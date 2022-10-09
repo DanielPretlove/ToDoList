@@ -1,0 +1,21 @@
+.todolist-card {
+    position: relative;
+    left: 10%;
+    top: 0.2em;
+    max-width: 80%;
+    height: 5em;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .todolistTitle {
+    position: absolute;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-align: center;
+    top: 2em;
+    width: 40%;
+    background-color: rgb(224, 224, 224);
+    left: 30%;
+    height: 10em;
+  }

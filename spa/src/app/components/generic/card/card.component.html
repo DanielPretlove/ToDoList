@@ -1,0 +1,25 @@
+<div>
+  <mat-card class="todolistTitle">
+    <mat-card-title style="font-size: 40px">My TodoList</mat-card-title>
+    <menu-component [showCreateButton]="true" [showCreateButton]="true"></menu-component>
+    <mat-card class="todolist-card">
+      <mat-card-subtitle style="font-size: 20px">{{todolist?.Type}}</mat-card-subtitle>
+      <mat-card-content>
+        <menu-component
+          [showEditButton]="true"
+          [showDeleteButton]="true"
+        ></menu-component>
+        <p style="font-size: 20px">{{todolist?.Description}}</p>
+        <h2>{{ todolist?.Completed}} </h2>
+        <mat-progress-bar mode="determinate" value={{todolist?.Completed}}></mat-progress-bar>
+      </mat-card-content>
+    </mat-card>
+  </mat-card>
+</div>
+
+<!-- 
+  Task as the title
+  below a description
+  as the toolbar have the percentage of completed 
+  Type as the sort of task - like programming, devops or whatever which i think should colorized 
+ -->
