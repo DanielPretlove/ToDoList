@@ -6,6 +6,11 @@ export interface IToDoList {
   Type: string;
 }
 
+export interface FUCK {
+  animal: string;
+  name: string;
+}
+
 
 
 // have a create

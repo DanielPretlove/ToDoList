@@ -8,7 +8,7 @@
   }
 
   .todolistTitle {
-    position: absolute;
+    position: relative;
     font-size: xx-large;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -16,6 +16,5 @@
     top: 2em;
     width: 40%;
     background-color: rgb(224, 224, 224);
-    left: 30%;
-    height: 10em;
+    left: 29%;
   }

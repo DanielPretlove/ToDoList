@@ -85,6 +85,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSliderModule,
     MatCheckboxModule,
     MatProgressBarModule
+  ],
+   declarations: [
   ]
 })
 export class MaterialModule { }

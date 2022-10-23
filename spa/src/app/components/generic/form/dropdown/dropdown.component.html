@@ -1,0 +1,21 @@
+<div class="form-group">
+  <mat-form-field style="width: 100%;" appearance="fill">
+    <mat-label>{{Placeholder}}</mat-label>
+    <mat-select 
+      name="{{name}}" 
+      class="form-control" 
+      [disabled]="disabled" 
+      [(ngModel)]="value" 
+      #item="ngModel" 
+      (ngModelChange)="changeSelector()"
+       required="{{required}}">
+       <mat-option value="Backend">Backend</mat-option>
+       <mat-option value="Frontend">Frontend</mat-option>
+       <mat-option value="Database">Database</mat-option>
+       <mat-option value="Team Organization">Team organization</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-error *ngIf="item.hasError('required') && form && form.submitted">
+    {{name}} is <strong>required</strong>.
+  </mat-error>
+</div>

@@ -1,0 +1,27 @@
+.createDialog {
+    position: relative;
+}
+
+.createTitle {
+    text-align: center;
+}
+
+
+.createButtons {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.createList {
+    width: 115px;
+    height: 40px;
+    left: 15px;
+  }
+
+.cancelList {
+    width: 115px;
+    height: 40px;
+  }

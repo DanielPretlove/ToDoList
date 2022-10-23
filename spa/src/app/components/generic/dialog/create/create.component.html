@@ -1,0 +1,31 @@
+
+<mat-card>
+  <div class="createDialog">
+    <h1 class="createTitle">Create new task</h1>
+    <h3>Completed</h3>
+    <input-component [Placeholder]="'Completed'" [required]="true"></input-component>
+    <h3>Task</h3>
+    <input-component [Placeholder]="'Task'" [required]="true"></input-component>
+    <h3>Description</h3>
+    <textarea-component [Placeholder]="'Description'" [rows]="3" [required]="true"></textarea-component>
+    <h3>Type</h3>
+    <dropdown-component [Placeholder]="'Type'" [required]="true"></dropdown-component>
+    <div class="createButtons">
+      <button class="cancelList" mat-raised-button color="warn">Cancel</button>
+      <button class="createList" mat-raised-button color="primary" (click)="CreateNewTask()">Create</button>
+    </div>
+  </div>
+</mat-card>
+
+
+<!-- 
+ public int Completed { get; set; }
+ [Required]
+ [JsonPropertyName("Task")]
+ public string Task { get; set; }
+ [Required]
+ [JsonPropertyName("Description")]
+ public string Description { get; set; }
+ [Required]
+ [JsonPropertyName("Type")]
+ public string Type { get; set; } -->
