@@ -1,6 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { IToDoList } from 'src/app/interfaces/IToDoList';
+import { ToDoList } from 'src/app/interfaces/ToDoList';
+import { DataService } from 'src/app/services/data.service';
 import { CreateComponent } from '../dialog/create/create.component';
 import { DeleteComponent } from '../dialog/delete/delete.component';
 import { EditComponent } from '../dialog/edit/edit.component';
@@ -16,9 +17,9 @@ export class MenuComponent implements OnInit {
   @Input() showDeleteButton = false;
   @Input() Toggle = false;
 
-  todolist: IToDoList | undefined;
+  public todolist: ToDoList = new ToDoList();
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private dataService: DataService) { }
 
   ngOnInit() {
   }
@@ -36,15 +37,17 @@ export class MenuComponent implements OnInit {
   }
 
   Edit() {
-    const dialogRef = this.dialog.open(EditComponent, {
-      width: '1000px',
-      height: '500px',
-      data: {todolist: this.todolist},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    this.dataService.getTodoListById(this.todolist.id)?.subscribe((data: ToDoList) => {
+      const dialogRef = this.dialog.open(EditComponent, {
+        width: '1000px',
+        height: '500px',
+        data: {todolist: this.todolist},
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
+    })
+    
   }
 
   Delete() {

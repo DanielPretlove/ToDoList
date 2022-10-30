@@ -1,16 +1,10 @@
-export interface IToDoList {
-  Id: string;
-  Completed: string;
-  Task: string;
-  Description: string;
-  Type: string;
+export class ToDoList {
+  public id: string = '';
+  public Completed: number = 0;
+  public Task: string = '';
+  public Description: string = '';
+  public Type: string = '';
 }
-
-export interface FUCK {
-  animal: string;
-  name: string;
-}
-
 
 
 // have a create

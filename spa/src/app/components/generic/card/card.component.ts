@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { IToDoList } from 'src/app/interfaces/IToDoList';
+import { ToDoList } from 'src/app/interfaces/ToDoList';
 
 @Component({
   selector: 'card-component',
@@ -8,13 +8,12 @@ import { IToDoList } from 'src/app/interfaces/IToDoList';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() todolist: IToDoList | undefined;
+  @Input() todolist: ToDoList = new ToDoList();
 
   constructor() {
    }
 
   ngOnInit() {
-    console.log(this.todolist?.Type)
   }
 
 

@@ -11,9 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { TodolistComponent } from './components/generic/todolist/todolist.component';
 import { CreateComponent } from './components/generic/dialog/create/create.component';
-import { InputComponent } from './components/generic/form/input/input.component';
-import { TextareaComponent } from './components/generic/form/textarea/textarea.component';
-import { DropdownComponent } from './components/generic/form/dropdown/dropdown.component';
 import { EditComponent } from './components/generic/dialog/edit/edit.component';
 import { DeleteComponent } from './components/generic/dialog/delete/delete.component';
 import { FormsModule } from '@angular/forms';
@@ -28,9 +25,6 @@ import { FormsModule } from '@angular/forms';
     CreateComponent,
     EditComponent,
     DeleteComponent,
-    InputComponent,
-    TextareaComponent,
-    DropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +33,8 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+  ],
+  exports: [
   ],
   providers: [],
   bootstrap: [AppComponent]
