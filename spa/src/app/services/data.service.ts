@@ -30,7 +30,6 @@ export class DataService {
     if (todolist !== undefined) {
       return of(todolist);
     }
-    console.log(id);
     return this.http.get<ToDoList>(this.baseUrl + "ToDoList/" + id);
   }
 
@@ -42,11 +41,11 @@ export class DataService {
     return this.http.post<ToDoList>(this.baseUrl + 'ToDoList', JSON.stringify(Todolist), {'headers': {'content-Type': 'application/json'}})
   }
 
-  UpdateToDoList(Todolist: ToDoList) {
-    return this.http.put<ToDoList>(this.baseUrl + 'ToDoList', JSON.stringify(Todolist), {'headers': {'content-Type': 'application/json'}})
+  UpdateToDoList(id: string, Todolist: ToDoList) {
+    return this.http.put<ToDoList>(this.baseUrl + 'ToDoList/' + id, JSON.stringify(Todolist), {'headers': {'content-Type': 'application/json'}})
   }
 
-  DeleteToDoList() {
-
+  DeleteToDoList(id: string) {
+    return this.http.delete<ToDoList>(this.baseUrl + 'ToDoList/' + id);
   }
 }

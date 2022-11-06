@@ -8,7 +8,7 @@ namespace Domain.Interface
 {
     public interface IToDoListRepository
     {
-        Task<IEnumerable<ToDoList>> GetAllDoLists();
+        Task<IEnumerable<ToDoList>> GetAllToDoLists();
         Task<ToDoList> GetToDoListById(Guid Id);
         Task<ToDoList> CreateNewToDoList(ToDoList toDoList);
         void UpdateToDoList(ToDoList toDoList);

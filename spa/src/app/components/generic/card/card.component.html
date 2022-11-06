@@ -6,7 +6,9 @@
         <menu-component
           [showEditButton]="true"
           [showDeleteButton]="true"
+          [todolist]="todolist"
         ></menu-component>
+        <p style="font-size: 20px">{{todolist.Task}}</p>
         <p style="font-size: 20px">{{todolist.Description}}</p>
         <h2>{{ todolist.Completed + '%'}} </h2>
         <mat-progress-bar mode="determinate" value={{todolist.Completed}}></mat-progress-bar>

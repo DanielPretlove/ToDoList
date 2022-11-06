@@ -10,15 +10,13 @@ import { ToDoList } from 'src/app/interfaces/ToDoList';
 export class CardComponent implements OnInit {
   @Input() todolist: ToDoList = new ToDoList();
 
-  constructor() {
+  constructor(
+  ) {
+
    }
 
   ngOnInit() {
   }
-
-
 }
-
-
 
 // Card should generic components that allows the user to 

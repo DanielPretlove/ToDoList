@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { map, Observable } from 'rxjs';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToDoList } from 'src/app/interfaces/ToDoList';
 import { DataService } from 'src/app/services/data.service';
 
@@ -10,11 +9,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  todolists$: Observable<ToDoList> | undefined;
   public todolist: ToDoList = new ToDoList();
-
-  @Output() valueChange: EventEmitter<any> = new EventEmitter<any>();
-
 
   constructor(
     public dialogRef: MatDialogRef<CreateComponent>,
@@ -27,20 +22,16 @@ export class CreateComponent implements OnInit {
   
   }
 
-  
-
   CreateNewTask() {
-    this.dataService.CreateNewToDoList(this.todolist).subscribe()
+    this.dataService.CreateNewToDoList(this.data).subscribe();
+    this.dialogRef.close();
   }
 
   Cancel() {
     this.dialogRef.close();
   }
-
-  public inputChange(value: string | number | undefined) {
-    if (value === 'number') {
-      value = parseInt(value as string);
-    }
-    this.valueChange.emit(value);
-  }
 }
+// <mat-option value="Backend">Backend</mat-option>
+// <mat-option value="Frontend">Frontend</mat-option>
+// <mat-option value="Database">Database</mat-option>
+// <mat-option value="Team Organization">Team organization</mat-option>

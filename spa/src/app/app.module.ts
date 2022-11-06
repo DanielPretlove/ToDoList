@@ -14,6 +14,9 @@ import { CreateComponent } from './components/generic/dialog/create/create.compo
 import { EditComponent } from './components/generic/dialog/edit/edit.component';
 import { DeleteComponent } from './components/generic/dialog/delete/delete.component';
 import { FormsModule } from '@angular/forms';
+import { InputComponent } from './components/generic/form/input/input.component';
+import { TextareaComponent } from './components/generic/form/textarea/textarea.component';
+import { SelectorComponent } from './components/generic/form/selector/selector.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { FormsModule } from '@angular/forms';
     CreateComponent,
     EditComponent,
     DeleteComponent,
+    InputComponent,
+    TextareaComponent,
+    SelectorComponent
   ],
   imports: [
     BrowserModule,

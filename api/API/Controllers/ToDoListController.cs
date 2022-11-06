@@ -19,7 +19,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<ActionResult<ToDoList>> GetAllToDoList()
         {
-            var result = await _repository.GetAllDoLists();
+            var result = await _repository.GetAllToDoLists();
             return Ok(result);
         }
 

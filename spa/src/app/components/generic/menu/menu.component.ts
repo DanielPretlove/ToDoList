@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   @Input() showDeleteButton = false;
   @Input() Toggle = false;
 
-  public todolist: ToDoList = new ToDoList();
+  @Input() todolist: ToDoList = new ToDoList();
 
   constructor(public dialog: MatDialog, private dataService: DataService) { }
 
@@ -41,8 +41,9 @@ export class MenuComponent implements OnInit {
       const dialogRef = this.dialog.open(EditComponent, {
         width: '1000px',
         height: '500px',
-        data: {todolist: this.todolist},
+        data: data
       });
+      console.log(dialogRef);
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
       });
@@ -52,9 +53,9 @@ export class MenuComponent implements OnInit {
 
   Delete() {
     const dialogRef = this.dialog.open(DeleteComponent, {
-      width: '1000px',
-      height: '500px',
-      data: {todolist: this.todolist},
+      width: '600px',
+      height: '150px',
+      data: this.todolist,
     });
 
     dialogRef.afterClosed().subscribe(result => {

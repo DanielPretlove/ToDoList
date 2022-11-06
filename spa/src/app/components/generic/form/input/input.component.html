@@ -1,0 +1,17 @@
+<div (keydown.enter)="$event.preventDefault()">
+  <mat-form-field appearance="fill" style="width: 100%">
+    <mat-label>Completed</mat-label>
+    <input matInput
+      [(ngModel)]="value" 
+      [autocomplete]="'off'"
+      #title="ngModel"
+      name={{name}}
+      required={{required}}
+      (ngModelChange)="inputChange()"
+      [disabled]="disabled"
+      [type]="type">
+  </mat-form-field>
+  <mat-error *ngIf="title.hasError('required') && form?.submitted">
+    {{name}} is <strong>required</strong>.
+  </mat-error>
+</div>

@@ -16,7 +16,7 @@ namespace Infrastructure.Repositiories
             _context = context;
         }
 
-        public async Task<IEnumerable<ToDoList>> GetAllDoLists()
+        public async Task<IEnumerable<ToDoList>> GetAllToDoLists()
         {
             return await _context.ToDoLists.ToListAsync();
         }

@@ -1,0 +1,20 @@
+<div class="form-group">
+  <mat-form-field style="width: 100%;" appearance="fill">
+    <mat-label>{{label}}</mat-label>
+    <mat-select 
+      name="{{name}}" 
+      class="form-control" 
+      [disabled]="disabled" 
+      [(ngModel)]="value" 
+      #item="ngModel" 
+      (ngModelChange)="InputValue()"
+       required="{{required}}">
+      <mat-option *ngFor="let item of additionalItems" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-error *ngIf="item.hasError('required') && form && form.submitted">
+    {{name}} is <strong>required</strong>.
+  </mat-error>
+</div>

@@ -1,3 +1,9 @@
-<p>
-  delete works!
-</p>
+<form #form="ngForm" novalidate >
+    <div class="deleteDialog">
+      <h1 class="deleteTitle">Are you sure you want to delete this current task</h1>
+      <div class="deleteButtons">
+        <button class="cancelList" mat-raised-button color="warn" (click)="Cancel()">Cancel</button>
+        <button class="deleteList" mat-raised-button color="primary" (click)="DeleteTask()">Delete Task</button>
+      </div>
+    </div>
+</form>

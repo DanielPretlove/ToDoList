@@ -1,0 +1,15 @@
+<mat-form-field style="width: 100%;" appearance="fill">
+  <mat-label>Description</mat-label>
+  <textarea matInput 
+    #description="ngModel"
+    [rows]="rows" 
+    [(ngModel)]="value" 
+    [autocomplete]="'off'" 
+    name={{name}}
+    required={{required}}
+    (ngModelChange)="InputValue()">
+  </textarea>
+</mat-form-field>
+<mat-error *ngIf="description.hasError('required') && form?.submitted">
+  Description is <strong>required</strong>.
+</mat-error>

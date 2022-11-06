@@ -1,8 +1,8 @@
 <div>
-    <mat-card-title style="font-size: 40px" class="todolistTitle">My Todolist</mat-card-title>
-    <menu-component [showCreateButton]="true" class="mainToggle"></menu-component>
+  <mat-card-title style="font-size: 40px" class="todolistTitle">My Todolist</mat-card-title>
+  <menu-component [showCreateButton]="true" class="mainToggle"></menu-component>
   <div *ngFor="let todolist of todolists$ | async">
-      <card-component [todolist]="todolist" ></card-component>
+    <card-component [todolist]="todolist" ></card-component>
   </div>
 </div>
 
